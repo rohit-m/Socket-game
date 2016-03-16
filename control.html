@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Game</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
+    <!--<script src="/www/js/game.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+</head>
+
+<body>
+<h1>jumpman</h1>
+<div style="width:100%; height:150px; font-size:20px; background:red; color:white; margin-bottom:20px; text-align:center;" class="fire">
+    Fire
+</div>
+<div style="width:100%; height:150px; font-size:20px; background:red; color:white; margin-bottom:20px; text-align:center;" class="left">
+    Left
+</div>
+<div style="width:100%; height:150px; font-size:20px; background:red; color:white; margin-bottom:20px; text-align:center;" class="right">
+    Right
+</div>
+</body>
+
+<script>
+    var socket = io.connect("http://www.theadventuresofrohitmohan.com:3000");
+    $('.fire').click(function(){
+        socket.emit('click', "jumpman");
+        return false;
+    });
+    $('.left').click(function(){
+        socket.emit('left', "jumpman");
+        return false;
+    });
+    $('.right').click(function(){
+        socket.emit('right', "jumpman");
+        return false;
+    });
+</script>
+</html>
