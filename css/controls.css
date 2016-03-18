@@ -1,0 +1,24 @@
+@media all and (orientation:portrait) {
+   .landscape {
+   	display:none;
+   }
+
+   .portrait {
+   	display:block;
+   }
+}
+
+@media all and (orientation:landscape) {
+   .landscape {
+   	display:block;
+   }
+
+   .portrait {
+   	display:none;
+   }
+
+   .left, .right, .fire {
+   	border:solid 1px #FFF;
+   	height:100vh !important;
+   }
+}
